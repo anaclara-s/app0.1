@@ -9,14 +9,14 @@ class paginaJogo extends StatefulWidget {
 
 class _paginaJogo extends State<paginaJogo> {
   List opcoes = ['pedra', 'papel', 'tesoura'];
-  String mensagem = 'Escolha uma opção: ';
-  // String escAleatoria = 'imagens/selo.png';
+  String mensagem = 'Sua escolha: ';
+
   var imagemApp = AssetImage('imagens/selo.png');
 
   void jogada(String escolha) {
     int O = Random().nextInt(opcoes.length);
     String aleatorio = opcoes[O];
-    // this.escAleatoria = '' + aleatorio + '.png';
+
     this.imagemApp = AssetImage('imagens/$aleatorio.png');
 
     print('click: ' + escolha + ', Random: ' + aleatorio);
@@ -55,14 +55,13 @@ class _paginaJogo extends State<paginaJogo> {
             Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
-                'Computador escolheu',
+                'Computador escolheu: ',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            //Image.asset(escAleatoria, height: 250),
             Image(image: imagemApp, height: 250),
             Padding(
               padding: EdgeInsets.only(bottom: 30),
